@@ -33,18 +33,24 @@ body {
 .main {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-top: 400px;
+  justify-content: space-around;
+  margin-top: 50px;
+  height: 75vh;
+  padding: 10px;
+  min-height: 500px;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  padding: 10px;
 }
 
 .calculator {
   position: absolute;
   background-color: var(--calculatorbackgroud);
   border-radius: 5px;
+  width: 400px;
   border: 2px var(--border) solid;
+  border-radius: 15px;
   padding: 20px;
-  height: 60vh;
-  min-height: 300px;
 }
 
 .screen {
@@ -54,18 +60,73 @@ body {
   height: 90px;
 }
 .buttons-grid {
-  padding-top: 3px;
-  margin: 20px 4px;
+  margin-top: 20px;
+  justify-content: center;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
+  grid-template-areas: 
+      " a b c d "
+      " e f g h "
+      " i j k l "
+      " m n o p "
+      " q r s t " 
+  ;
 }
+#decimal{
+  grid-area: s;
+}
+#delete{
+  grid-area: q;
+}
+#backspace {
+  grid-area: d;
+}
+#add{
+  grid-row: 3/5;
+  grid-column: 4/5;
+}
+#equal {
+  grid-area: t;
+}
+#number0 {
+  grid-area: r;
+}
+#number1 {
+  grid-area: m;
+}
+#number2 {
+  grid-area: n;
+}
+#number3 {
+  grid-area: o;
+}
+#number4 {
+  grid-area: i;
+}
+#number5{
+  grid-area: j;
+}
+#number6{
+  grid-area: k;
+}
+#number7{
+  grid-area: e;
+}
+#number8{
+  grid-area: f; 
+}
+#number9{
+  grid-area: g; 
+}
+
 .button {
   border: none;
   padding: 20px;
   font-family: "Righteous", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
     sans-serif;
   font-size: medium;
+  border-radius: 5px;;
 }
 
 footer {
