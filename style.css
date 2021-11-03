@@ -6,6 +6,9 @@
   --font: black;
   --border: #020202;
   --icon: #ff007f;
+  --text2: #808080;
+  --buttonBackground: #e0f5ce;
+  --buttonHoverText: #ff198c;
 }
 
 *,
@@ -57,6 +60,19 @@ body {
   border: 2px black solid;
   width: 350px;
   height: 90px;
+  text-align: right;
+}
+
+.prevOperation {
+  color: var(--text2);
+  font-size: 20px;
+  padding-right: 5px;
+}
+
+.input {
+  font-size: 24px;
+  color: var(--font);
+  padding-right: 5px;
 }
 .buttons-grid {
   margin-top: 20px;
@@ -64,24 +80,23 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
-  grid-template-areas: 
-      " a b c d "
-      " e f g h "
-      " i j k l "
-      " m n o p "
-      " q r s t " 
-  ;
+  grid-template-areas:
+    " a b c d "
+    " e f g h "
+    " i j k l "
+    " m n o p "
+    " q r s t ";
 }
-#decimal{
+#decimal {
   grid-area: s;
 }
-#delete{
+#delete {
   grid-area: q;
 }
 #backspace {
   grid-area: d;
 }
-#add{
+#add {
   grid-row: 3/5;
   grid-column: 4/5;
 }
@@ -103,20 +118,20 @@ body {
 #number4 {
   grid-area: i;
 }
-#number5{
+#number5 {
   grid-area: j;
 }
-#number6{
+#number6 {
   grid-area: k;
 }
-#number7{
+#number7 {
   grid-area: e;
 }
-#number8{
-  grid-area: f; 
+#number8 {
+  grid-area: f;
 }
-#number9{
-  grid-area: g; 
+#number9 {
+  grid-area: g;
 }
 
 .button {
@@ -124,8 +139,14 @@ body {
   padding: 20px;
   font-family: "Righteous", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
     sans-serif;
-  font-size: medium;
-  border-radius: 5px;;
+  font-size: 26px;
+  border-radius: 15px;
+}
+
+.button:hover {
+  background-color: var(--buttonBackground);
+  cursor: pointer;
+  color: var(--buttonHoverText);
 }
 
 footer {
