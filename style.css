@@ -71,6 +71,7 @@ body {
   padding-right: 5px;
   border: 2px black solid; /* remove */
   height: 35px;
+  width: 350px;
 }
 
 .input {
@@ -79,6 +80,7 @@ body {
   padding-right: 5px;
   border: 3px red solid; /* remove */
   height: 55px;
+  width: 350px;
 }
 .buttons-grid {
   margin-top: 20px;
