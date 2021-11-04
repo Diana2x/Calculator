@@ -14,31 +14,31 @@
     <div class="main">
         <div class="calculator"> 
             <div class="screen">
-                <div class="prevOperation">9</div>
-                <div class="input">12</div>
+                <div class="prevOperation" data-previous-operand></div>
+                <div class="input" data-current-operand></div>
             </div>
 
             <div class="buttons-grid">
-                <button id="number0" class="button number">0</button>
-                <button id="number1" class="button number">1</button>
-                <button id="number2" class="button number">2</button>
-                <button id="number3" class="button number">3</button>
-                <button id="number4" class="button number">4</button>
-                <button id="number5" class="button number">5</button>
-                <button id="number6" class="button number">6</button>
-                <button id="number7" class="button number">7</button>
-                <button id="number8" class="button number">8</button>
-                <button id="number9" class="button number">9</button>
-                <button id="decimal" class="button decimal">.</button>
+                <button id="number0" class="button" data-number>0</button>
+                <button id="number1" class="button" data-number>1</button>
+                <button id="number2" class="button" data-number>2</button>
+                <button id="number3" class="button" data-number>3</button>
+                <button id="number4" class="button" data-number>4</button>
+                <button id="number5" class="button" data-number>5</button>
+                <button id="number6" class="button" data-number>6</button>
+                <button id="number7" class="button" data-number>7</button>
+                <button id="number8" class="button" data-number>8</button>
+                <button id="number9" class="button" data-number>9</button>
+                <button id="decimal" class="button" data-number>.</button>
 
-                <button id="power" class="button operator"><i class="fas fa-superscript"></i></button>
-                <button id="percentage" class="button operator"><i class="fas fa-percentage"></i></button>
-                <button id="multiply" class="button operator"><i class="fas fa-times"></i></button> 
-                <button id="minus" class="button operator"><i class="fas fa-minus"></i></button>
-                <button id="add" class="button operator"><i class="fas fa-plus"></i></button>
-                <button id="backspace" class= "button backspace"><i class="fas fa-backspace"></i></button>
-                <button id="equal" class="button equal"><i class="fas fa-equals"></i></button>
-                <button id="delete" class="button delete"><i class="fas fa-trash-alt"></i></button>
+                <button id="power" class="button" data-operation><i class="fas fa-superscript"></i></button>
+                <button id="percentage" class="button" data-operation><i class="fas fa-percentage"></i></button>
+                <button id="multiply" class="button" data-operation><i class="fas fa-times"></i></button> 
+                <button id="minus" class="button" data-operation><i class="fas fa-minus"></i></button>
+                <button id="add" class="button" data-operation><i class="fas fa-plus"></i></button>
+                <button id="backspace" class= "button backspace" data-delete><i class="fas fa-backspace"></i></button>
+                <button id="equal" class="button equal" data-equals><i class="fas fa-equals"></i></button>
+                <button id="delete" class="button delete" data-allclear><i class="fas fa-trash-alt"></i></button>
             </div>
             
         </div> <!-- Closes Calculator div-->
