@@ -58,11 +58,12 @@ body {
 .screen {
   background-color: var(--screen);
   border: 2px black solid;
-  width: 350px;
-  height: 90px;
   text-align: right;
   display: flex;
   flex-direction: column;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .prevOperation {
@@ -70,8 +71,8 @@ body {
   font-size: 20px;
   padding-right: 5px;
   border: 2px black solid; /* remove */
-  height: 35px;
   width: 350px;
+  min-height: 32px;
 }
 
 .input {
@@ -79,8 +80,8 @@ body {
   color: var(--font);
   padding-right: 5px;
   border: 3px red solid; /* remove */
-  height: 55px;
   width: 350px;
+  min-height: 64px;
 }
 .buttons-grid {
   margin-top: 20px;
@@ -105,8 +106,10 @@ body {
   grid-area: d;
 }
 #add {
-  grid-row: 3/5;
-  grid-column: 4/5;
+  grid-area: p;
+}
+#divide {
+  grid-area: l;
 }
 #equal {
   grid-area: t;
