@@ -173,6 +173,7 @@ footer {
   margin-top: 9px;
   font-size: x-large;
   padding-left: 10px;
+  color: var(--font);
 }
 
 .fa-github-alt:hover {
