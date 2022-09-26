@@ -112,7 +112,6 @@ operationButtons.forEach(button => {
     button.addEventListener('click', () => {
         calculator.chooseOperation(button.innerText);
         calculator.updateDisplay()
-        // update this to check for the ID to do the mathematical operation and add keyboard support
     })
 })
 
@@ -131,3 +130,101 @@ deleteButton.addEventListener("click", button =>{
     calculator.delete();
     calculator.updateDisplay();
 })
+
+document.addEventListener("keydown", inputKey);
+
+function inputKey(e) {
+  const keyPress = e.key;
+  const keyPressCode = e.keyCode;
+  const screen = document.getElementsByClassName("input")[0];
+  /* 
+  96 to 105 = 0 to 9
+  48 to 57 = 0 to 9
+  110 = .
+  */
+  if (
+    (keyPressCode >= 96 && keyPressCode <= 105) ||
+    (keyPressCode >= 48 && keyPressCode <= 57) ||
+    (keyPressCode == 110 &&
+      screen.textContent.length > 0 &&
+      !screen.textContent.includes(".")) ||
+    (keyPressCode == 190 &&
+      screen.textContent.length > 0 &&
+      !screen.textContent.includes("."))
+  ) {
+    let selectAudioNumber = Math.floor(Math.random() * (3 - 1 + 1) + 1);
+    let audio = new Audio(`audio/tecla-${selectAudioNumber}.mp3`);
+    calculator.appendNumber(keyPress);
+    calculator.updateDisplay();
+    audio.play();
+    audio.volume = validateButton();
+    console.log((audio.volume = validateButton()));
+  }
+
+  /*
+  8 = delete key
+  13 = enter
+  */
+  if (keyPressCode == 8) {
+    calculator.delete();
+    calculator.updateDisplay();
+    soundOperate();
+  }
+  if (keyPressCode == 13) {
+    calculator.compute();
+    calculator.updateDisplay();
+    soundOperate();
+  }
+
+  /* 
+  111 = /
+  109 = -  
+  107 = + 
+  106 = *
+  */
+  if (keyPressCode == 111) {
+    let aux = "÷";
+    calculator.chooseOperation(aux);
+    calculator.updateDisplay();
+    soundOperate();
+  }
+  if (keyPressCode == 109 || keyPressCode == 107) {
+    calculator.chooseOperation(keyPress);
+    calculator.updateDisplay();
+    soundOperate();
+  }
+  if (keyPressCode == 106) {
+    let aux = "X";
+    calculator.chooseOperation(aux);
+    calculator.updateDisplay();
+    soundOperate();
+  }
+  console.log(keyPressCode);
+  console.log(keyPress);
+}
+
+function soundOperate() {
+  let selectAudioOperate = Math.floor(Math.random() * (5 - 4 + 1) + 4);
+  let audio = new Audio(`audio/tecla-${selectAudioOperate}-operate.mp3`);
+  audio.play();
+}
+var optionSound = document.getElementById("sound");
+
+optionSound.addEventListener("click", enableOrDisableSound);
+function enableOrDisableSound() {
+  if (optionSound.textContent == "On 🔊") {
+    optionSound.textContent = "Off 🔇";
+  } else {
+    optionSound.textContent = "On 🔊";
+  }
+}
+
+function validateButton() {
+  if (optionSound.textContent == "On 🔊") {
+    return 0.4;
+  } else {
+    return 0;
+  }
+}
+
+validateButton();
